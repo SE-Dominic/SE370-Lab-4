@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main.java" type="Application" factoryName="Application" singleton="false">
+    <option name="MAIN_CLASS_NAME" value="jdk.tools.jmod.Main" />
+    <module name="SE370-Lab-4" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
