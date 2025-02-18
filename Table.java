@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.io.*;
 import java.awt.*;
@@ -41,6 +42,18 @@ class Table extends JFrame {
     public static void main(String args[]) {
         Table main = new Table();
         System.out.println("Hello");
+    }
+}
+
+import java.swing.JFrame;
+import java.swing.JLabel;
+import java.swing.JButton;
+
+class Table {
+
+
+    public static void main(String args[]) {
+
     }
 }
 
