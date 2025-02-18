@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.io.*;
 import java.awt.*;
 
-class Table {
+class Table extends JFrame {
     final int row = 4;
     final int col = 13;
     final String[][] cardMatrix = new String[row][col];
@@ -12,10 +12,10 @@ class Table {
         window.setLocation(300, 500);
         window.setBounds(600, 600, 0, 0);
         window.setSize(600, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         fill_array(cardMatrix);
         printArray(cardMatrix);
-
     }
 
     public void fill_array(String[][] cardMatrix) {
