@@ -15,7 +15,13 @@ class Table extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         fill_array(cardMatrix);
-        printArray(cardMatrix);
+        JTextArea text = new JTextArea();
+        text.setFont(new Font("Monospaced", Font.PLAIN, 12));
+        text.setEditable(false);
+
+        //we need to convert array to a strong to set it in the JText
+        String arrStr = arrayToString(cardMatrix);
+        text.setText(arrStr);
     }
 
     public void fill_array(String[][] cardMatrix) {
@@ -24,6 +30,17 @@ class Table extends JFrame {
                 cardMatrix[i][j] = " x ";
             }
         }
+    }
+
+    public String arrayToString(String[][] cardMatrix) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                sb.append(cardMatrix[i][j]);
+            }
+            sb.append("\n"); // Add a newline after each row
+        }
+        return sb.toString();
     }
 
     public void printArray(String[][] cardMatrix)
@@ -40,7 +57,7 @@ class Table extends JFrame {
 
     public static void main(String args[]) {
         Table main = new Table();
-        System.out.println("Hello");
+
     }
 }
 
