@@ -3,20 +3,19 @@ import java.io.*;
 import java.awt.*;
 
 class Table {
-    final int row = 5;
+    final int row = 4;
     final int col = 13;
-    final String[][] cardMatrix = new string[row][col];
-
-    public void fill_array(String[][] cardMatrix);
+    final String[][] cardMatrix = new String[row][col];
 
     public Table() {
         JFrame window = new JFrame();
         window.setLocation(300, 500);
-        window.setBounds(600, 600);
+        window.setBounds(600, 600, 0, 0);
         window.setSize(600, 500);
         window.setVisible(true);
-        Table table = new Table();
-        window.add(table);
+        fill_array(cardMatrix);
+        printArray(cardMatrix);
+
     }
 
     public void fill_array(String[][] cardMatrix) {
@@ -24,8 +23,24 @@ class Table {
             for (int j = 0; j < col; j++) {
                 cardMatrix[i][j] = " x ";
             }
+        }
+    }
+
+    public void printArray(String[][] cardMatrix)
+    {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(cardMatrix[i][j]);
+            }
+
             System.out.println("\n");
         }
+    }
+
+
+    public static void main(String args[]) {
+        Table main = new Table();
+        System.out.println("Hello");
     }
 }
 
