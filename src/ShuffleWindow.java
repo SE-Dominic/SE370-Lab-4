@@ -3,11 +3,12 @@ package src;
 import java.awt.*;
 import javax.swing.*;
 
-
 class ShuffleWindow extends JFrame {
 
+    //JPanel that displays deck of cards
     private final DisplayCards displayCards;
 
+    //JFrame constructor
     public ShuffleWindow() {
         //window handling
         setTitle("Card Shuffler");
@@ -20,7 +21,14 @@ class ShuffleWindow extends JFrame {
         displayCards = new DisplayCards();
         add(displayCards, BorderLayout.CENTER);
 
-        //button for reshuffling
+        //JButton for reshuffling
+        JButton reshuffleButton = getJButton();
+
+        //add button to bottom of window
+        add(reshuffleButton, BorderLayout.SOUTH);
+    }
+
+    private JButton getJButton() {
         JButton reshuffleButton = new JButton("Shuffle");
 
         //basically change the size of the button by adding buffers around the button text
@@ -28,15 +36,13 @@ class ShuffleWindow extends JFrame {
         reshuffleButton.setBorder(BorderFactory.createEmptyBorder(buttonHeight/2, 0, buttonHeight/2, 0));
         reshuffleButton.setFocusPainted(false); //remove black line around text
 
-        //add button to bottom of window
-        add(reshuffleButton, BorderLayout.SOUTH);
-
         //button action -> call reshuffle() to shuffle and display cards
         reshuffleButton.addActionListener(e -> displayCards.reshuffle());
-
+        return reshuffleButton;
     }
 
     public static void main(String[] args) {
+        //thread safety
         SwingUtilities.invokeLater(() -> {
             new ShuffleWindow().setVisible(true); //initialize window
         });

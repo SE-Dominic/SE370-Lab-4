@@ -29,7 +29,7 @@ public class DisplayCards extends JPanel {
     //reshuffle the card order of cardImageList
     public void reshuffle() {
         System.out.println("Shuffling Cards");
-        Collections.shuffle(cardImageList);
+        Collections.shuffle(cardImageList); //THANK YOU JOSHUA BLOCH FOR CREATING COLLECTIONS FRAMEWORK <3
         printCards(); //already handles removing all cards from JPanel
     }
 
@@ -51,8 +51,10 @@ public class DisplayCards extends JPanel {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error reading directory.");
         }
+
+        System.out.printf("Directory stream finished, %d files added.\n" ,cardImageList.size());
     }
 
     //converts the ArrayList of ImageIcons to JLabels and adds them to main panel
