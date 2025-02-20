@@ -57,7 +57,7 @@ public class DisplayCardsPanel extends JPanel {
         System.out.printf("Directory stream finished, %d files added.\n" ,cardImageList.size());
     }
 
-    //converts the ArrayList of ImageIcons to JLabels and adds them to main panel
+    //converts Images (in array list) to JLabels and adds them to main panel
     private void printCards() {
         //clear everything in green window
         removeAll();
@@ -72,7 +72,7 @@ public class DisplayCardsPanel extends JPanel {
             this.add(label);
         }
 
-        //update window just in case
+        //update panel just in case
         revalidate();
         repaint();
     }
