@@ -3,23 +3,23 @@ package src;
 import java.awt.*;
 import javax.swing.*;
 
-class ShuffleWindow extends JFrame {
+class CardShufflerFrame extends JFrame {
 
     //JPanel that displays deck of cards
-    private final DisplayCards displayCards;
+    private final DisplayCardsPanel displayCardsPanel;
 
     //JFrame constructor
-    public ShuffleWindow() {
+    public CardShufflerFrame() {
         //window handling
-        setTitle("Card Shuffler");
+        setTitle("Card Randomizer");
         setSize(1200, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLayout(new BorderLayout());
 
         //JPanel that displays shuffled cards
-        displayCards = new DisplayCards();
-        add(displayCards, BorderLayout.CENTER);
+        displayCardsPanel = new DisplayCardsPanel();
+        add(displayCardsPanel, BorderLayout.CENTER);
 
         //JButton for reshuffling
         JButton reshuffleButton = getJButton();
@@ -37,14 +37,14 @@ class ShuffleWindow extends JFrame {
         reshuffleButton.setFocusPainted(false); //remove black line around text
 
         //button action -> call reshuffle() to shuffle and display cards
-        reshuffleButton.addActionListener(e -> displayCards.reshuffle());
+        reshuffleButton.addActionListener(e -> displayCardsPanel.reshuffle());
         return reshuffleButton;
     }
 
     public static void main(String[] args) {
         //thread safety
         SwingUtilities.invokeLater(() -> {
-            new ShuffleWindow().setVisible(true); //initialize window
+            new CardShufflerFrame().setVisible(true); //initialize window
         });
     }
 }

@@ -10,16 +10,16 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DisplayCards extends JPanel {
+public class DisplayCardsPanel extends JPanel {
     final int ROW = 4;
     final int COL = 13;
     final int CARD_WIDTH = 70;
     final int CARD_HEIGHT = 100;
     final ArrayList<Image> cardImageList = new ArrayList<>();   //contains all images of cards
-    final Path cardImageDirectoryPath = Paths.get("CardImages/");   //Path to CardImages folder/directory
+    final Path IMAGE_DIRECTORY_PATH = Paths.get("CardImages/");   //Path to CardImages folder/directory
 
     //JPanel constructor
-    public DisplayCards() {
+    public DisplayCardsPanel() {
         setBackground(new Color(14, 115, 37));
         setLayout(new GridLayout(ROW, COL));
         readDirectory();
@@ -37,8 +37,8 @@ public class DisplayCards extends JPanel {
     private void readDirectory() {
         try {
             //check if directory exists/is valid
-            if (Files.exists(cardImageDirectoryPath) && Files.isDirectory(cardImageDirectoryPath)) {
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(cardImageDirectoryPath)) {
+            if (Files.exists(IMAGE_DIRECTORY_PATH) && Files.isDirectory(IMAGE_DIRECTORY_PATH)) {
+                try (DirectoryStream<Path> stream = Files.newDirectoryStream(IMAGE_DIRECTORY_PATH)) {
                     //iterate through all files in directory
                     for (Path file : stream) {
                         ImageIcon cardIcon = new ImageIcon(file.toString()); //convert Path -> String, then String -> ImageIcon
