@@ -11,15 +11,16 @@ class ShuffleWindow extends JFrame {
     public ShuffleWindow() {
         //window handling
         setTitle("Card Shuffler");
-        setSize(600, 600);
+        setSize(1200, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
         setLayout(new BorderLayout());
 
         //JPanel that displays shuffled cards
         displayCards = new DisplayCards();
         add(displayCards, BorderLayout.CENTER);
 
-        //the button for reshuffling
+        //button for reshuffling
         JButton reshuffleButton = new JButton("Shuffle");
 
         //basically change the size of the button by adding buffers around the button text
