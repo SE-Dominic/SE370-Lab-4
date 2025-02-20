@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ShuffleWIndow" type="Application" factoryName="Application" singleton="false">
+    <option name="MAIN_CLASS_NAME" value="src.ShuffleWindow" />
+    <module name="SE370-Lab-4" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
