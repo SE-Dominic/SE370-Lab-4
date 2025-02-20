@@ -5,10 +5,8 @@ import javax.swing.*;
 
 
 class ShuffleWindow extends JFrame {
-    final int row = 4;
-    final int col = 13;
-    final String[][] cardMatrix = new String[row][col];
-    private DisplayCards displayCards;
+
+    private final DisplayCards displayCards;
 
     public ShuffleWindow() {
         //window handling
@@ -35,33 +33,11 @@ class ShuffleWindow extends JFrame {
         //button action -> call reshuffle() to shuffle and display cards
         reshuffleButton.addActionListener(e -> displayCards.reshuffle());
 
-        fill_array(cardMatrix);
-        printArray(cardMatrix);
     }
 
-    public void fill_array(String[][] cardMatrix) {
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                cardMatrix[i][j] = " x ";
-            }
-        }
-    }
-
-    public void printArray(String[][] cardMatrix)
-    {
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(cardMatrix[i][j]);
-            }
-
-            System.out.println("\n");
-        }
-    }
-
-
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             new ShuffleWindow().setVisible(true); //initialize window
-        });;
+        });
     }
 }
